@@ -1,14 +1,16 @@
-import * as actions from '../actions';
+import * as actions from '../actions/home';
 
 const initialState = {
     isLoading: false,
-    homeData: {}
+    jsonAPI: []
+    
 }
 
 const home = ( state = initialState, action ) => {
 
     const { type, payload } = action;
-    const { homeData } = state;
+    
+    
 
     switch(type){
         case actions.SENDING_REQUEST: 
@@ -20,8 +22,10 @@ const home = ( state = initialState, action ) => {
             return {
                 ...state,
                 isLoading: false,
-                homeData: payload
+                jsonAPI: payload
             }
+        default:
+            return state
     }
 
 }

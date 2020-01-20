@@ -8,8 +8,8 @@ import './App.css';
 class App extends Component {
   render() {
     return (
-      <Provider>
-        <BrowserRouter store={store}>
+      <Provider store={store}>
+        <BrowserRouter>
           <Home />
         </BrowserRouter>
       </Provider>
